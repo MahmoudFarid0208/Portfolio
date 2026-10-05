@@ -1,0 +1,246 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mahmoud Farid — Android Developer · PropTech</title>
+<meta name="description" content="Android developer who built a connected PropTech ecosystem: Kotlin/Compose apps on a Ktor backend with Vtiger CRM.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232748c7'/%3E%3Ctext x='16' y='22' font-size='15' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='white'%3EMF%3C/text%3E%3C/svg%3E">
+<script>try{document.documentElement.dataset.theme=localStorage.t||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#0f172a;--mut:#5a657d;--line:#e2e7f0;--acc:#2748c7;--on:#fff}
+:root[data-theme=dark]{--bg:#0a0f1e;--card:#111a30;--ink:#e9eef9;--mut:#9aa7c4;--line:#222d4a;--acc:#8aa4ff;--on:#0a0f1e}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 ui-sans-serif,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:inherit}button{font:inherit;cursor:pointer}.w{max-width:1120px;margin:auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:5;backdrop-filter:blur(12px);background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--line)}
+nav .w{display:flex;align-items:center;gap:22px;height:60px}nav b{margin-right:auto}
+nav a{text-decoration:none;color:var(--mut);font-size:14px}nav a:hover{color:var(--ink)}
+.ib{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:50%;width:36px;height:36px}
+section{padding:72px 20px 0}
+h1{font-size:clamp(34px,5vw,56px);line-height:1.1;margin:.3em 0;letter-spacing:-.02em}
+h2{font-size:30px;margin:4px 0 8px;letter-spacing:-.01em}
+.eye{color:var(--acc);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.lead{color:var(--mut);max-width:64ch}.sub{color:var(--mut);margin:0 0 28px;max-width:70ch}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding-top:56px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
+.btn{padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);text-decoration:none;font-weight:600;font-size:15px}
+.btn.p{background:var(--acc);border-color:var(--acc);color:var(--on)}
+.stats{display:flex;gap:30px;flex-wrap:wrap}.stats b{display:block;font-size:28px;line-height:1.2}.stats span{color:var(--mut);font-size:13px}
+.ph{border:5px solid #0b0f1a;border-radius:24px;overflow:hidden;background:#0b0f1a;box-shadow:0 14px 34px rgba(10,20,50,.22)}
+.ph img{display:block;width:100%;aspect-ratio:1080/2246;object-fit:cover}
+.fan{display:flex;justify-content:center;padding:20px 0}.fan .ph{width:34%;margin:0 -3%}
+.fan .ph:nth-child(1){transform:rotate(-7deg) translateY(16px)}.fan .ph:nth-child(2){transform:translateY(-16px);z-index:1}.fan .ph:nth-child(3){transform:rotate(7deg) translateY(16px)}
+.grid,.flow{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}.flow{gap:34px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;position:relative}
+.box small{color:var(--mut);display:block}.box ul{margin:10px 0 0;padding-left:20px;color:var(--mut)}
+.flow .box:not(:last-child)::after{content:'→';position:absolute;right:-26px;top:50%;transform:translateY(-50%);color:var(--acc);font-size:20px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.chip{font-size:12.5px;padding:3px 10px;border-radius:999px;border:1px solid var(--line);color:var(--mut)}
+.app{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--a);border-radius:20px;padding:26px;margin-bottom:24px}
+.app header{display:flex;gap:12px;align-items:flex-start}.app h3{margin:0;font-size:22px}
+.role{color:var(--mut);font-weight:600;font-size:14px}.role::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--a);margin-right:8px}
+.pill{margin-left:auto;font-size:12px;font-weight:600;padding:3px 11px;border-radius:999px;background:color-mix(in srgb,var(--a) 15%,transparent);white-space:nowrap}
+.app header .ib{width:32px;height:32px}.app ul{margin:12px 0;padding-left:20px;color:var(--mut)}.app li{margin:4px 0}
+.strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 2px 14px;scrollbar-width:thin}
+.strip figure{flex:0 0 190px;margin:0;scroll-snap-align:start}.strip img{cursor:zoom-in}
+figcaption{font-size:12.5px;color:var(--mut);text-align:center;margin-top:8px}
+.soon{aspect-ratio:1080/2246;display:grid;place-items:center;border:2px dashed var(--line);background:transparent;box-shadow:none;color:var(--mut);font-size:13px;text-align:center;padding:8px}
+#lb{position:fixed;inset:0;background:rgba(5,8,18,.88);display:flex;align-items:center;justify-content:center;gap:16px;z-index:20}#lb[hidden]{display:none}
+#lb img{max-height:90vh;max-width:min(80vw,460px);border-radius:22px}
+#lb button{background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:50%;width:44px;height:44px;font-size:22px}#x{position:absolute;top:16px;right:16px}
+footer{padding:56px 20px;color:var(--mut)}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.fan{max-width:360px;margin:auto}.flow .box::after{display:none}.flow{gap:14px}}
+@media(max-width:700px){nav a{display:none}.strip figure{flex-basis:160px}}
+
+:root{--e:cubic-bezier(.2,.7,.2,1);--v:#7c4dff}:root[data-theme=dark]{--v:#a78bfa}
+body{font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,"Segoe UI",Roboto,sans-serif}
+body::before{content:'';position:fixed;inset:-20%;z-index:-1;pointer-events:none;background:radial-gradient(40% 35% at 20% 15%,color-mix(in srgb,var(--acc) 26%,transparent),transparent 70%),radial-gradient(35% 30% at 85% 30%,color-mix(in srgb,var(--v) 22%,transparent),transparent 70%),radial-gradient(40% 35% at 55% 90%,color-mix(in srgb,var(--acc) 14%,transparent),transparent 70%);animation:dr 22s ease-in-out infinite alternate}
+@keyframes dr{to{transform:translate(4%,6%) scale(1.15) rotate(6deg)}}
+#pb{position:fixed;top:0;inset-inline:0;height:3px;z-index:30;background:linear-gradient(90deg,var(--acc),var(--v));transform:scaleX(0);transform-origin:left}
+nav a{position:relative}nav a::after{content:'';position:absolute;inset-inline:0;bottom:-3px;height:2px;border-radius:2px;background:var(--acc);transform:scaleX(0);transition:transform .25s var(--e)}nav a:hover::after{transform:scaleX(1)}
+.ib{transition:transform .25s var(--e),border-color .2s}.ib:hover{border-color:var(--acc);transform:scale(1.1)}.ib.lg{width:auto;padding:0 14px;border-radius:999px;font-weight:700;font-size:13px}
+.eye{display:flex;align-items:center;gap:10px}.eye::before{content:'';width:24px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--acc),var(--v))}
+.hero>div:first-child>*{animation:up .8s var(--e) both}
+.hero>div:first-child>h1{animation:up .8s var(--e) both,sh 9s ease-in-out infinite alternate;background:linear-gradient(100deg,var(--ink) 15%,var(--acc) 50%,var(--v) 75%,var(--ink));background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+@keyframes up{from{opacity:0;transform:translateY(22px)}}@keyframes sh{to{background-position:100% 0}}
+.btn{transition:translate .25s var(--e),box-shadow .25s}.btn:hover{translate:0 -3px;box-shadow:0 10px 24px color-mix(in srgb,var(--acc) 32%,transparent)}.btn.p{background:linear-gradient(135deg,var(--acc),var(--v));border-color:transparent}
+.fan .ph{animation:fl 7s ease-in-out infinite}.fan .ph:nth-child(2){animation-delay:-2.3s}.fan .ph:nth-child(3){animation-delay:-4.6s}@keyframes fl{50%{translate:0 -12px}}
+.mq{direction:ltr;overflow:hidden;margin-top:64px;padding:16px 0;border-block:1px solid var(--line);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.mq div{display:flex;width:max-content;animation:mq 34s linear infinite}.mq span{color:var(--mut);font-weight:700;white-space:nowrap;padding-right:28px}.mq span::before{content:'◆';color:var(--acc);margin-right:28px}@keyframes mq{to{transform:translateX(-50%)}}
+.box,.app{backdrop-filter:blur(10px);box-shadow:0 1px 2px rgba(15,23,42,.04),0 10px 28px -14px rgba(15,23,42,.14)}
+.app{border-radius:24px;background:linear-gradient(180deg,color-mix(in srgb,var(--a) 8%,var(--card)),var(--card) 45%)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s var(--e) var(--d,0s),transform .8s var(--e) var(--d,0s),translate .25s var(--e),box-shadow .25s,border-color .25s}.rv.in{opacity:1;transform:none}
+.box:hover,.app:hover{border-color:color-mix(in srgb,var(--a,var(--acc)) 45%,var(--line));box-shadow:0 18px 40px -18px color-mix(in srgb,var(--a,var(--acc)) 45%,transparent)}.box:hover{translate:0 -4px}
+.chip{transition:.2s}.chip:hover{border-color:var(--acc);color:var(--ink)}
+.ph{transition:transform .35s var(--e),box-shadow .35s}.strip figure:hover .ph{transform:translateY(-8px) scale(1.04);box-shadow:0 22px 40px -12px rgba(10,20,50,.4)}
+.soon{background:linear-gradient(100deg,transparent 35%,color-mix(in srgb,var(--acc) 12%,transparent) 50%,transparent 65%) 0 0/250% 100%;animation:sm 2.6s linear infinite}@keyframes sm{to{background-position:-150% 0}}
+#lb{direction:ltr}#lb:not([hidden]){animation:fi .25s}#lb img{animation:zi .35s var(--e)}@keyframes fi{from{opacity:0}}@keyframes zi{from{opacity:0;transform:scale(.92)}}
+[dir=rtl] *{letter-spacing:0!important;text-transform:none!important}
+[dir=rtl] body{font-family:Cairo,"Segoe UI",Tahoma,sans-serif;line-height:1.85}[dir=rtl] h1{line-height:1.4}
+[dir=rtl] nav b{margin:0 0 0 auto}[dir=rtl] .pill{margin:0 auto 0 0}[dir=rtl] .role::before{margin:0 0 0 8px}[dir=rtl] ul{padding:0 20px 0 0}[dir=rtl] #pb{transform-origin:right}
+[dir=rtl] .flow .box:not(:last-child)::after{right:auto;left:-26px;content:'←'}
+@media(prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+.tl{position:relative;display:grid;gap:18px;padding-inline-start:56px}.tl::before{content:'';position:absolute;inset-block:22px;inset-inline-start:21px;width:2px;background:linear-gradient(var(--acc),var(--v));opacity:.45}
+.step{position:relative;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;background:var(--card);border:1px solid var(--line);border-inline-start:4px solid var(--a);border-radius:18px;padding:20px 22px}
+.step>i{position:absolute;inset-inline-start:-56px;top:18px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:800;font-size:17px;color:#fff;background:var(--a);box-shadow:0 0 0 6px var(--bg)}
+.step.in>i{animation:pop .6s var(--e) both}@keyframes pop{from{transform:scale(.4);opacity:0}}
+.step h3{margin:8px 0 4px;font-size:20px}.step p{margin:0;color:var(--mut);max-width:62ch}.step .chips{margin:0;align-items:center}
+.who{font-size:13px;font-weight:700;color:var(--mut)}.app-chip{text-decoration:none;border-color:var(--a);color:var(--ink);background:color-mix(in srgb,var(--a) 10%,transparent)}
+.th{display:flex;gap:10px}.th a{display:block}.th .ph{width:88px;border-width:3px;border-radius:14px}.th .soon{font-size:11px;padding:4px}
+figcaption{line-height:1.45;text-wrap:balance}.strip figure{flex-basis:200px}
+@media(max-width:760px){.step{grid-template-columns:1fr}.th .ph{width:28vw;max-width:110px}}
+</style></head><body><div id="pb"></div>
+<nav><div class="w"><b>Mahmoud Farid</b><a href="#apps">Work</a><a href="#arch">Architecture</a><a href="#flow">Lifecycle</a><a href="#exp">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a><button class="ib lg" id="lg" aria-label="Language"></button><button class="ib" id="th" aria-label="Toggle theme">◐</button></div></nav>
+<main><div class="w hero"><div>
+<div class="eye" id="eye"></div>
+<h1>Android developer building connected PropTech ecosystems</h1>
+<p class="lead">At Arabia Holding I designed, built and deployed a family of Android apps for residents, sales, operations, gate security, marketing, violations and support, all on one Ktor backend integrated with Vtiger CRM.</p>
+<div class="btns"><a class="btn p" href="#apps">View the apps</a><a class="btn" href="Mahmoud_Farid_CV.pdf" download>Download CV</a><a class="btn" href="#contact">Contact</a></div>
+<div class="stats" id="stats"></div></div>
+<div class="fan"><div class="ph"><img src="assets/gate/t/allowed-scan.webp" alt="Gate Hub scan result"></div><div class="ph"><img src="assets/holding/t/home.webp" alt="Arabia Holding home screen"></div><div class="ph"><img src="assets/marketing/t/home.webp" alt="Marketing Hub feed"></div></div></div>
+
+<div class="mq" id="mq"></div>
+<section id="arch" class="w"><div class="eye">Architecture</div><h2>One platform, many hubs</h2>
+<p class="sub">Every app talks to the same backend, so a resident's request can reach customer service and the gate without duplicate data entry. Deployed and operated on AWS Lightsail.</p>
+<div class="flow"><div class="box"><b id="n7"></b><small id="names"></small></div><div class="box"><b>Ktor backend</b><small>One REST API and data layer shared by every app</small></div><div class="box"><b>Vtiger CRM</b><small>Residents, leads, tickets and payment plans in one system</small></div></div></section>
+
+<section id="flow" class="w"><div class="eye">Lifecycle</div><h2>From lead to resident</h2><p class="sub">Follow one buyer through the seven apps. Every handoff goes through the same Ktor backend and Vtiger CRM, so no team re-enters data.</p><div class="tl" id="tl"></div></section>
+
+<section id="apps" class="w"><div class="eye">Work</div><h2>The Arabia ecosystem</h2>
+<p class="sub">Screens use demo data; no real resident or company information is shown. Tap any screen to enlarge.</p><div id="list"></div></section>
+
+<section id="exp" class="w"><div class="eye">Experience</div><h2>Where I've worked</h2>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+<div class="box"><b>Android &amp; CRM Developer · Arabia Holding</b><small>Feb 2025 – Present</small><ul><li>Designed, built and deployed the full ecosystem: Android apps, a Ktor backend and Vtiger CRM integration.</li><li>Owned the deployment pipeline and infrastructure on AWS Lightsail.</li></ul></div>
+<div class="box"><b>Android &amp; CRM Developer · El-Shark Textile</b><small>Jun 2024 – Jan 2025</small><ul><li>Customised Zoho CRM to automate sales and customer-service workflows.</li><li>Built Android apps for real-time sales and support communication with Firebase (realtime data, push notifications, live messaging).</li></ul></div></div>
+<p class="sub" style="margin:14px 0 0">B.Sc. Computer Science, Mansoura University (2018–2022), Faculty of Computers and Information. Graduation project: BabyCare App (Excellent). Personal project: Weathering With You, a weather app built with Clean Architecture, Hilt and Navigation Compose.</p></section>
+
+<section id="skills" class="w"><div class="eye">Skills</div><h2>Toolbox</h2><div class="grid" id="sk"></div></section>
+
+<section id="contact" class="w"><div class="eye">Contact</div><h2>Let's talk</h2>
+<p class="sub">Open to conversations about Android, PropTech and CRM-integrated platforms. Arabic (native) · English (very good).</p><div class="btns" id="links"></div></section></main>
+<footer class="w"><small>© <span id="yr"></span> Mahmoud Farid · Cairo, Egypt</small></footer>
+<div id="lb" hidden><button data-lb="-1" aria-label="Previous">‹</button><img alt=""><button data-lb="1" aria-label="Next">›</button><button id="x" aria-label="Close">×</button></div>
+<script>
+const C={email:'mahmoud.farid620@gmail.com',linkedin:'',github:'',company:'Aswaq Development'}; // fill linkedin/github to show buttons; clear company to hide the tag
+const A=[
+{id:'holding',n:'Arabia Holding',r:'Resident &amp; Community Portal',c:'#2748c7',d:'The flagship app for residents and prospective buyers: requests, services, gate access, payments and community in one place. Arabic and English with RTL support.',
+p:['AI-powered request classifier routes tickets to the right department','Company knowledge-base chatbot that guides residents and can submit CRM tickets','Visitor QR gate passes with gate notifications','Instalment and payment plan viewer, plus family and tenant management','Community feed with news, likes and comments','Lead portal: prospects register interest and are created as leads in Vtiger CRM'],
+t:['Kotlin','Jetpack Compose','Hilt','Retrofit','Coroutines','Multi-module','Clean Architecture'],
+s:['welcome','login','home','unit-details','create-request','all-requests','request-details','chatbot','all-services','create-service','gate-qr-code','gate-passes','create-gate-notification','gate-notifications','community','post-comments','announcements','violations','profile','users-management','user-permissions','visitor-home','visitor-project-details']},
+{id:'gate',n:'Gate Hub',r:'Security Gate App',c:'#2e7d32',d:'Lets security staff validate visitor entry in seconds, with a clear result for every scan.',
+p:['QR scanner that validates visitor passes at checkpoints','Real-time gate notifications pushed from resident requests','Distinct outcomes: allowed, already used, expired, not yet valid, revoked, wrong project, invalid, not found'],
+t:['Kotlin','Jetpack Compose','QR scanning','Push notifications'],
+s:['login','home','allowed-scan','already-used-scan','expired-scan','not-yet-valid-scan','revoked-scan','wrong-project-scan','invalid-code-scan','not-found-scan']},
+{id:'marketing',n:'Marketing Hub',r:'Content &amp; Community Management',c:'#7c4dff',d:'A content tool for the marketing team to publish to the resident community.',
+p:['Publish community news, announcements and advertisements','Published and pending-review workflow for posts','Audience and user details'],
+t:['Kotlin','Jetpack Compose','Material Design'],s:['login','home','create-post','pending-posts','audience','user-details']},
+{id:'violations',n:'Violation Management Hub',r:'Community Rules &amp; Fines',c:'#dc2626',d:'Track and manage community violations unit by unit.',
+p:['Searchable violation list with Paid and Unpaid filters','Create-violation flow and detailed violation view','English and Arabic language toggle'],
+t:['Kotlin','Jetpack Compose'],s:['all-violations','create-violation','violation-details']},
+{id:'sales',n:'Sales Hub',r:'Sales Agent Tool',c:'#d97706',d:'Gives sales agents a live view of inventory and a fast way to build payment proposals.',
+p:['Interactive masterplan with real-time unit availability and status','Flag units as interested, add comments and contact leads from the app','NPV-based payment plan generator; proposals are forwarded to operations'],t:['Kotlin','Jetpack Compose','NPV engine'],s:[]},
+{id:'operations',n:'Operations Hub',r:'Operations &amp; Finance',c:'#0d9488',d:'Where the operations team reviews sales proposals before they reach the CRM.',
+p:['Payment plan dashboard for NPV-generated proposals from sales','Edit, approve and reject workflows before plans are committed to CRM'],t:['Kotlin','Jetpack Compose','Vtiger CRM'],s:[]},
+{id:'cs',n:'Customer Service Hub',r:'Support Team',c:'#0284c7',d:'One inbox for every resident request.',
+p:['Centralised ticket inbox for the support team','View, track and respond to resident requests end-to-end'],t:['Kotlin','Jetpack Compose','Vtiger CRM'],s:[]}];
+const S={Mobile:'Kotlin,Jetpack Compose,Dagger Hilt,Retrofit,Coroutines,Navigation Compose,Material Design,Firebase',Architecture:'Clean Architecture,MVVM,SOLID,OOP',
+'Backend &amp; Cloud':'Ktor,REST APIs,AWS Lightsail,Deployment &amp; DevOps','CRM &amp; AI':'Vtiger CRM,Zoho CRM,Workflow automation,AI chatbot integration',
+Domain:'Property management,Community apps,Real-estate CRM,Gate access control,NPV &amp; payment plans'};
+const $=s=>document.querySelector(s),cap=s=>s.replace(/-/g,' ').replace(/^./,c=>c.toUpperCase());
+const AR={'Mahmoud Farid · Cairo':'محمود فريد · القاهرة، مصر','Mahmoud Farid':'محمود فريد','Work':'الأعمال','Architecture':'البنية التقنية','Experience':'الخبرات','Skills':'المهارات','Contact':'تواصل','Portfolio':'معرض الأعمال','prepared for':'أُعدّ لـ',
+'Android developer building':'مطوّر أندرويد يبني منظومات تقنية عقارية مترابطة',
+'At Arabia Holding I designed':'في Arabia Holding صمّمتُ وطوّرتُ ونشرتُ مجموعة تطبيقات أندرويد للسكان والمبيعات والعمليات وأمن البوابات والتسويق والمخالفات والدعم، جميعها على خادم Ktor واحد متكامل مع Vtiger CRM.',
+'View the apps':'استعرض التطبيقات','Download CV':'تحميل السيرة الذاتية',
+'connected Android apps':'تطبيق أندرويد مترابط','Ktor backend + Vtiger CRM':'خادم Ktor مع Vtiger CRM','Ktor backend':'خادم Ktor','Lightsail deployment':'نشر على Lightsail',
+'One platform, many hubs':'منصة واحدة وتطبيقات متعددة',
+'Every app talks to the same':'تتصل جميع التطبيقات بالخادم نفسه، فيصل طلب الساكن إلى خدمة العملاء والبوابة دون إدخال البيانات مرتين. منشور ومُدار على AWS Lightsail.',
+'One REST API and data layer':'واجهة REST وطبقة بيانات واحدة مشتركة بين كل التطبيقات',
+'Residents, leads, tickets':'السكان والعملاء المحتملون والتذاكر وخطط الدفع في نظام واحد',
+'The Arabia ecosystem':'منظومة تطبيقات Arabia',
+'Screens use demo data':'الشاشات تعرض بيانات تجريبية ولا تتضمن أي معلومات حقيقية عن السكان أو الشركة. اضغط على أي شاشة لتكبيرها.',
+"Where I've worked":'أماكن عملتُ بها',
+'Android & CRM Developer · Ar':'مطوّر أندرويد وCRM · Arabia Holding','Android & CRM Developer · El':'مطوّر أندرويد وCRM · El-Shark Textile',
+'Feb 2025':'فبراير 2025 – الآن','Jun 2024':'يونيو 2024 – يناير 2025',
+'Designed, built and deployed':'صمّمتُ وطوّرتُ ونشرتُ المنظومة كاملة: تطبيقات أندرويد وخادم Ktor وتكامل Vtiger CRM.',
+'Owned the deployment':'توليتُ مسار النشر والبنية التحتية على AWS Lightsail.',
+'Customised Zoho CRM':'خصّصتُ Zoho CRM لأتمتة مسارات المبيعات وخدمة العملاء.',
+'Built Android apps for real-time':'طوّرتُ تطبيقات أندرويد للتواصل الفوري بين المبيعات والدعم باستخدام Firebase (بيانات لحظية وإشعارات ورسائل مباشرة).',
+'B.Sc. Computer Science':'بكالوريوس علوم الحاسب، جامعة المنصورة (2018–2022)، كلية الحاسبات والمعلومات. مشروع التخرج: تطبيق BabyCare (تقدير ممتاز). مشروع شخصي: Weathering With You، تطبيق طقس مبني بـ Clean Architecture وHilt وNavigation Compose.',
+'Toolbox':'الأدوات','Lifecycle':'دورة العميل','From lead to resident':'من عميل محتمل إلى ساكن','Follow one buyer':'تتبّع مشتريًا واحدًا عبر التطبيقات السبعة. كل تسليم يمر عبر خادم Ktor وVtiger CRM نفسيهما، فلا يعيد أي فريق إدخال البيانات.','Mobile':'تطبيقات الجوال','Backend &amp; Cloud':'الخادم والسحابة','CRM &amp; AI':'CRM والذكاء الاصطناعي','Domain':'المجال',
+'Property management':'إدارة العقارات','Community apps':'تطبيقات المجتمعات','Real-estate CRM':'CRM عقاري','Gate access control':'التحكم في دخول البوابات','NPV &amp; payment plans':'القيمة الحالية وخطط الدفع','Workflow automation':'أتمتة سير العمل','AI chatbot integration':'دمج روبوتات المحادثة','Deployment &amp; DevOps':'النشر وDevOps',
+"Let's talk":'لنتحدث','Open to conversations about':'يسعدني الحديث عن أندرويد والتقنية العقارية والمنصات المتكاملة مع أنظمة CRM. العربية (لغة أم) · الإنجليزية (جيد جدًا).',
+'Email':'البريد الإلكتروني','Screens coming soon':'اللقطات قريبًا','Coming soon':'قريبًا'};
+const AA=[
+{r:'بوابة السكان والمجتمع',d:'التطبيق الرئيسي للسكان والمشترين المحتملين: الطلبات والخدمات وتصاريح البوابة والمدفوعات والمجتمع في مكان واحد، بالعربية والإنجليزية مع دعم RTL.',p:['مصنّف طلبات بالذكاء الاصطناعي يوجّه التذاكر إلى القسم المناسب','روبوت محادثة من قاعدة معرفة الشركة يرشد السكان ويرفع التذاكر إلى CRM','تصاريح زوّار بـ QR وإشعارات للبوابة','عرض الأقساط وخطط الدفع، وإدارة أفراد الأسرة والمستأجرين','موجز مجتمعي للأخبار والإعجابات والتعليقات','بوابة العملاء المحتملين: يسجّل المشتري اهتمامه فيُنشأ عميلًا محتملًا في Vtiger CRM']},
+{r:'تطبيق بوابة الأمن',d:'يتيح لأفراد الأمن التحقق من دخول الزوار في ثوانٍ، مع نتيجة واضحة لكل عملية مسح.',p:['ماسح QR للتحقق من تصاريح الزوار عند نقاط الدخول','إشعارات فورية للبوابة من طلبات السكان','نتائج متعددة: مسموح، مستخدم سابقًا، منتهي، غير ساري بعد، ملغى، مشروع خاطئ، رمز غير صالح، غير موجود']},
+{r:'إدارة المحتوى والمجتمع',d:'أداة لفريق التسويق لنشر المحتوى في مجتمع السكان.',p:['نشر أخبار المجتمع والإعلانات والعروض','مسار للمنشورات المنشورة وقيد المراجعة','تفاصيل الجمهور والمستخدمين']},
+{r:'قواعد المجتمع والمخالفات',d:'تتبّع وإدارة مخالفات المجتمع لكل وحدة.',p:['قائمة مخالفات قابلة للبحث مع تصفية مدفوعة وغير مدفوعة','إنشاء مخالفة وعرض تفاصيلها','تبديل بين العربية والإنجليزية']},
+{r:'أداة وكلاء المبيعات',d:'يمنح وكلاء المبيعات رؤية مباشرة للمخزون وطريقة سريعة لإعداد عروض الدفع.',p:['مخطط رئيسي تفاعلي بتوفر الوحدات وحالتها لحظيًا','تحديد الوحدات المهتم بها وإضافة ملاحظات والتواصل مع العملاء المحتملين من التطبيق','مولّد خطط دفع بحساب القيمة الحالية NPV وإرسال العروض إلى العمليات']},
+{r:'العمليات والمالية',d:'حيث يراجع فريق العمليات عروض المبيعات قبل وصولها إلى CRM.',p:['لوحة خطط دفع لمراجعة عروض NPV الواردة من المبيعات','مسارات تعديل واعتماد ورفض قبل ترحيل الخطط إلى CRM']},
+{r:'فريق الدعم',d:'صندوق واحد لكل طلبات السكان.',p:['صندوق تذاكر مركزي لفريق الدعم','عرض الطلبات ومتابعتها والرد عليها من البداية للنهاية']}];
+A[0].s=['welcome','visitor-home','visitor-project-details','login','home','unit-details','create-request','all-requests','request-details','chatbot','all-services','create-service','gate-qr-code','gate-passes','create-gate-notification','gate-notifications','community','post-comments','announcements','violations','profile','users-management','user-permissions'];
+A[4].s=['all-leads','add-new-lead','lead-details','assign-lead-to-agent','change-status-lead','available-units-in-interactive-masterplan','choose-payment-plan-with-npv','send-payment-plan-to-operations-for-review'];
+A[5].s=['home','hold-requests','request-details','active-requests','all-payment-plan-systems','system-of-payment-plan-details'];
+A[4].p=['Lead pipeline: search, status filters, agent assignment and a comment timeline','Interactive masterplan with live unit availability: available, reserved, sold, maintenance','NPV-priced payment plans for the chosen unit','Submit the plan with the transfer receipt and national ID for operations approval'];
+AA[4].p=['مسار العملاء المحتملين: بحث وتصفية بالحالة وتعيين الوكيل وسجل ملاحظات','مخطط رئيسي تفاعلي بتوفر الوحدات لحظيًا: متاحة أو محجوزة أو مباعة أو تحت الصيانة','خطط دفع محسوبة بالقيمة الحالية NPV للوحدة المختارة','إرسال الخطة مع إيصال التحويل والبطاقة الشخصية لاعتماد العمليات'];
+A[5].p=['Three work queues: hold requests, active holds and payment plan systems','Review each proposal: plan summary, NPV, attachments and payment schedule, then approve or reject','Mark reservations paid and confirm units on active holds','Maintain the payment plan catalogue per project: deposit, duration, discount rate and visibility to sales'];
+AA[5].p=['ثلاث قوائم عمل: طلبات الحجز والحجوزات النشطة وأنظمة خطط الدفع','مراجعة كل عرض: ملخص الخطة وNPV والمرفقات وجدول الدفع ثم الاعتماد أو الرفض','تسجيل سداد الحجز وتأكيد الوحدة في الحجوزات النشطة','إدارة كتالوج خطط الدفع لكل مشروع: المقدم والمدة ونسبة الخصم وظهورها للمبيعات'];
+A[6].s=['all-tickets','ticket1-details','ticket2-details'];
+A[6].p=['Ticket inbox with live counters: open, in progress, waiting, closed','Filter by status; every ticket shows priority, category, project and ID','Full ticket view: unit details and the whole conversation with the resident','Reply, ask for details or photos, update the status and close the ticket when solved','Resident ratings after closure give the team real satisfaction data'];
+AA[6].p=['صندوق تذاكر بعدّادات لحظية: مفتوحة وقيد التنفيذ وبانتظار الرد ومغلقة','تصفية بحسب الحالة، وكل تذكرة تعرض الأولوية والتصنيف والمشروع والرقم','عرض كامل للتذكرة: تفاصيل الوحدة والمحادثة كاملة مع الساكن','الرد وطلب تفاصيل أو صور وتحديث الحالة وإغلاق التذكرة عند الحل','تقييمات السكان بعد الإغلاق تمنح الفريق بيانات حقيقية عن الرضا'];
+A[0].s.splice(A[0].s.indexOf('request-details')+1,0,'submit-feedback','closed-ticket-with-feedback');
+A[0].p.push('After a ticket closes, residents rate it: app experience, staff performance, would they recommend us, plus a comment');
+AA[0].p.push('بعد إغلاق التذكرة يقيّمها الساكن: تجربة التطبيق وأداء الموظف والتوصية بالخدمة مع تعليق');
+const CAP={
+holding:{welcome:'Entry choice: resident, invited user or visitor|اختيار الدخول: ساكن أو مدعو أو زائر','visitor-home':'Visitor home: latest projects and a register-interest button|الصفحة الرئيسية للزائر: أحدث المشاريع وزر تسجيل الاهتمام','visitor-project-details':'Project overview with key facts and map location|نظرة عامة على المشروع وأهم بياناته وموقعه على الخريطة',login:'Secure email and password sign-in|تسجيل دخول آمن بالبريد الإلكتروني وكلمة المرور',
+home:'Home: unit cards, projects, quick actions and an unpaid-violation alert|الرئيسية: وحداتي والمشاريع والإجراءات السريعة وتنبيه المخالفات','unit-details':'Unit specs, contract dates and instalment progress|مواصفات الوحدة وتواريخ العقد وتقدم الأقساط','create-request':'Raise a support ticket with a description and attachments|إنشاء تذكرة دعم بوصف ومرفقات','all-requests':'All tickets with status filters|كل التذاكر مع تصفية حسب الحالة','request-details':'Ticket thread: support replies and status updates|محادثة التذكرة: ردود الدعم وتحديثات الحالة',
+chatbot:'AI assistant classifies the issue, picks the unit and opens the ticket|المساعد الذكي يصنّف المشكلة ويحدد الوحدة ويفتح التذكرة','all-services':'Booked services with status and time slot|الخدمات المحجوزة بحالتها وموعدها','create-service':'Book cleaning or maintenance for a preferred date and time|حجز نظافة أو صيانة في التاريخ والوقت المفضلين','gate-qr-code':'Shareable visitor QR pass with validity dates|تصريح زائر QR قابل للمشاركة بتواريخ صلاحية','gate-passes':'Visitor passes: active, used or expired, with revoke|تصاريح الزوار: سارية أو مستخدمة أو منتهية، مع الإلغاء',
+'create-gate-notification':'Warn the gate about an expected delivery or service visit|إبلاغ البوابة بتوصيل أو زيارة خدمة متوقعة','gate-notifications':'Track each notice: pending, arrived, cleared or cancelled|متابعة كل إشعار: قيد الانتظار أو وصل أو أُنهي أو أُلغي',community:'Community feed with project tags, likes and comments|موجز المجتمع بوسوم المشاريع والإعجابات والتعليقات','post-comments':'Comments on a post, each tagged with the commenter\'s unit|تعليقات على المنشور، كل تعليق بوحدة صاحبه',announcements:'Management announcements with an unread counter|إعلانات الإدارة مع عدّاد غير المقروء',
+violations:'Violation record with fine amount and payment receipt|سجل المخالفة بقيمة الغرامة وإيصال السداد',profile:'Owner profile, language switch and unit member management|ملف المالك وتبديل اللغة وإدارة أعضاء الوحدة','users-management':'Add family members and tenants to a unit|إضافة أفراد الأسرة والمستأجرين إلى الوحدة','user-permissions':'Per-member switches for tickets, services and gate access|صلاحيات لكل عضو للتذاكر والخدمات والبوابة'},
+gate:{login:'Staff-only sign-in for security officers|دخول مخصص لموظفي الأمن',home:'Live list of expected deliveries and visits, one-tap arrival|قائمة مباشرة بالتوصيلات والزيارات المتوقعة وتسجيل الوصول بلمسة','allowed-scan':'Entry granted, showing visitor and unit|تم منح الدخول مع عرض الزائر والوحدة','already-used-scan':'Rejected: pass was already used|مرفوض: التصريح مستخدم مسبقًا','expired-scan':'Rejected: pass has expired|مرفوض: انتهت صلاحية التصريح','not-yet-valid-scan':'Rejected: pass is not valid yet|مرفوض: التصريح غير ساري بعد','revoked-scan':'Rejected: the owner cancelled this pass|مرفوض: ألغى المالك هذا التصريح','wrong-project-scan':'Rejected: pass is for another project|مرفوض: التصريح لمشروع آخر','invalid-code-scan':'Rejected: QR is not a visitor pass|مرفوض: رمز QR ليس تصريح زائر','not-found-scan':'Rejected: no matching pass found|مرفوض: لا يوجد تصريح مطابق'},
+marketing:{login:'Staff-only sign-in for the marketing team|دخول مخصص لفريق التسويق',home:'Feed with Published and Pending review tabs|الموجز بتبويبي المنشور وقيد المراجعة','create-post':'Compose a post, target all projects or one, attach media|كتابة منشور واستهداف كل المشاريع أو مشروع محدد مع وسائط','pending-posts':'Moderate resident posts: approve or reject|مراجعة منشورات السكان: اعتماد أو رفض',audience:'Searchable resident directory by project and unit|دليل السكان بحسب المشروع والوحدة مع بحث','user-details':'Per-resident activity and community access controls|نشاط كل ساكن وصلاحياته داخل المجتمع'},
+violations:{'all-violations':'Search and filter by unit or paid status|بحث وتصفية بحسب الوحدة أو حالة السداد','create-violation':'Issue a violation with fine amount and evidence|تسجيل مخالفة بقيمة الغرامة والأدلة','violation-details':'Fine, evidence and payment receipt in one view|الغرامة والأدلة وإيصال السداد في عرض واحد'},
+sales:{'all-leads':'Lead list with status filters, owner agent and project|قائمة العملاء المحتملين بتصفية الحالة والوكيل والمشروع','add-new-lead':'Capture a new lead straight into the CRM|إضافة عميل محتمل مباشرة إلى CRM','lead-details':'Lead profile: source, interest, agent and comment timeline|ملف العميل: المصدر والاهتمام والوكيل وسجل الملاحظات','assign-lead-to-agent':'Assign the lead to a sales agent|تعيين العميل لوكيل مبيعات','change-status-lead':'Move the lead through its pipeline status|نقل العميل بين مراحل مسار المبيعات','available-units-in-interactive-masterplan':'Building units with live status: available, reserved, sold|وحدات المبنى بحالتها لحظيًا: متاحة أو محجوزة أو مباعة','choose-payment-plan-with-npv':'NPV-priced payment plans for the chosen unit|خطط دفع بحساب القيمة الحالية للوحدة المختارة','send-payment-plan-to-operations-for-review':'Submit the plan with documents for approval|إرسال الخطة مع المستندات للاعتماد'},
+operations:{home:'Three work queues: holds, active holds, plan systems|ثلاث قوائم عمل: طلبات الحجز والحجوزات النشطة وأنظمة الدفع','hold-requests':'Incoming proposals filtered by pending, approved or rejected|العروض الواردة بتصفية معلّق ومعتمد ومرفوض','request-details':'Plan summary, NPV, attachments and schedule, then approve or reject|ملخص الخطة وNPV والمرفقات والجدول ثم اعتماد أو رفض','active-requests':'Approved holds awaiting reservation payment or unit confirmation|حجوزات معتمدة بانتظار سداد الحجز أو تأكيد الوحدة','all-payment-plan-systems':'Payment plan catalogue per project: deposit, duration, rate|كتالوج خطط الدفع لكل مشروع: المقدم والمدة والنسبة','system-of-payment-plan-details':'Edit plan parameters and hide inactive plans from sales|تعديل معاملات الخطة وإخفاء غير الفعّال عن المبيعات'}};
+Object.assign(CAP.holding,{'submit-feedback':'Rate a closed ticket: app experience, staff performance, recommendation|تقييم التذكرة بعد إغلاقها: تجربة التطبيق وأداء الموظف والتوصية','closed-ticket-with-feedback':'Closed ticket keeps the saved rating and comment|التذكرة المغلقة تحتفظ بالتقييم والتعليق المحفوظين'});
+CAP.cs={'all-tickets':'Ticket inbox with live status counters and filters|صندوق التذاكر بعدّادات الحالة المباشرة والتصفية','ticket1-details':'Full ticket: unit details and the conversation with the resident|التذكرة كاملة: تفاصيل الوحدة والمحادثة مع الساكن','ticket2-details':'Ask for details or photos, then close the ticket when solved|طلب تفاصيل أو صور ثم إغلاق التذكرة عند الحل'};
+const J=[
+{a:['marketing'],w:'Marketing team|فريق التسويق',t:'Attract buyers|جذب المشترين',d:'Marketing drafts news, announcements and project ads, targets all projects or one, and moderates resident posts in the Pending review queue. Approved posts appear in the community feed of the Arabia Holding app.|يُعدّ التسويق الأخبار والإعلانات وإعلانات المشاريع ويستهدف كل المشاريع أو مشروعًا محددًا، ويراجع منشورات السكان في قائمة قيد المراجعة. وتظهر المنشورات المعتمدة في موجز مجتمع تطبيق Arabia Holding.',i:['marketing/create-post','marketing/pending-posts','holding/community']},
+{a:['holding'],w:'Prospect|المشتري المحتمل',t:'Register interest|تسجيل الاهتمام',d:'A prospect opens the app as a visitor, browses projects and taps Register interest. The backend creates the lead in Vtiger CRM automatically, with no manual entry.|يفتح المشتري المحتمل التطبيق كزائر ويتصفح المشاريع ويضغط تسجيل الاهتمام، فيُنشئ الخادم العميل المحتمل في Vtiger CRM تلقائيًا دون إدخال يدوي.',i:['holding/welcome','holding/visitor-home','holding/visitor-project-details']},
+{a:['sales'],w:'Sales team|فريق المبيعات',t:'Qualify and propose|التأهيل والعرض',d:'The lead appears in the Sales Hub, gets assigned to an agent and moves through statuses with a comment trail. The agent checks live unit availability on the masterplan, picks an NPV-priced plan and submits it with the transfer receipt and national ID.|يظهر العميل في تطبيق المبيعات ويُعيَّن لوكيل وينتقل بين الحالات مع سجل ملاحظات. يراجع الوكيل توفر الوحدات لحظيًا على المخطط الرئيسي ويختار خطة بحساب NPV ويرسلها مع إيصال التحويل والبطاقة الشخصية.',i:['sales/lead-details','sales/available-units-in-interactive-masterplan','sales/choose-payment-plan-with-npv']},
+{a:['operations'],w:'Operations team|فريق العمليات',t:'Review and confirm|المراجعة والتأكيد',d:'Operations checks the plan summary, NPV, attachments and payment schedule, then approves or rejects. Approved requests move to Active Holds, where operations marks the reservation paid and confirms the unit before the plan is committed to the CRM.|تراجع العمليات ملخص الخطة وNPV والمرفقات وجدول الدفع ثم تعتمد أو ترفض. وتنتقل الطلبات المعتمدة إلى الحجوزات النشطة حيث تسجّل العمليات سداد الحجز وتؤكد الوحدة قبل ترحيل الخطة إلى CRM.',i:['operations/hold-requests','operations/request-details','operations/active-requests']},
+{a:['holding'],w:'Client|العميل',t:'Become a resident|يصبح ساكنًا',d:'The buyer is now a client. Their unit appears in the app with specs, contract dates and instalment progress, and they can invite family members and tenants with their own permissions.|أصبح المشتري عميلًا. تظهر وحدته في التطبيق بمواصفاتها وتواريخ العقد وتقدم الأقساط، ويمكنه دعوة أفراد الأسرة والمستأجرين بصلاحيات مستقلة.',i:['holding/home','holding/unit-details','holding/user-permissions']},
+{a:['holding','cs'],w:'Support team|فريق الدعم',t:'Get support|الحصول على الدعم',d:'A resident raises a ticket, or lets the AI assistant open one. It is classified, routed to the right department and lands in the Customer Service inbox. Agents reply, ask for details or photos and update the status, then close the ticket once it is solved. The resident follows every change in the ticket thread.|يرفع الساكن تذكرة أو يتركها للمساعد الذكي، فتُصنَّف وتُوجَّه إلى القسم المناسب وتصل إلى صندوق خدمة العملاء. يرد الموظفون ويطلبون تفاصيل أو صورًا ويحدّثون الحالة ثم يغلقون التذكرة عند الحل، ويتابع الساكن كل تغيير في محادثة التذكرة.',i:['holding/chatbot','cs/all-tickets','cs/ticket1-details','holding/request-details']},
+{a:['holding','cs'],w:'Resident and support team|الساكن وفريق الدعم',t:'Measure satisfaction|قياس رضا العملاء',d:'Once a ticket is closed, the resident can rate it: app experience, staff performance, whether they would recommend the service, plus a comment. The rating stays on the closed ticket, giving customer service real satisfaction data on every solution.|بعد إغلاق التذكرة يمكن للساكن تقييمها: تجربة التطبيق وأداء الموظف والتوصية بالخدمة مع تعليق. يبقى التقييم محفوظًا على التذكرة المغلقة، فيحصل فريق الدعم على بيانات حقيقية عن رضا العملاء لكل حل.',i:['holding/submit-feedback','holding/closed-ticket-with-feedback']},
+{a:['gate','violations'],w:'Security and community|الأمن والمجتمع',t:'Live in the community|الحياة داخل المجتمع',d:'Residents issue visitor QR passes and delivery notices that reach the gate in real time. Security scans each pass and gets a clear allowed or rejected result. Violations are logged per unit and surface in the resident app.|يُصدر السكان تصاريح QR للزوار وإشعارات التوصيل فتصل إلى البوابة لحظيًا. يمسح الأمن كل تصريح ويحصل على نتيجة واضحة بالسماح أو الرفض. وتُسجَّل المخالفات لكل وحدة وتظهر في تطبيق الساكن.',i:['holding/gate-qr-code','gate/allowed-scan','violations/all-violations']}];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+let lang='en';try{lang=new URLSearchParams(location.search).get('lang')||localStorage.l||'en'}catch(e){}
+const ar=()=>lang==='ar',look=s=>{for(const e in AR)if(s===e||e.length>7&&s.startsWith(e))return AR[e]},tr=s=>ar()&&look(s)||s;
+function R(){const x=ar(),h=document.documentElement,n7=A.length;h.lang=lang;h.dir=x?'rtl':'ltr';$('#lg').textContent=x?'EN':'عربي';
+$('#eye').textContent=tr('Portfolio')+(C.company?' · '+tr('prepared for')+' '+C.company:'');
+$('#stats').innerHTML=[[n7,'connected Android apps'],['1','Ktor backend + Vtiger CRM'],['AWS','Lightsail deployment']].map(s=>`<div><b>${s[0]}</b><span>${tr(s[1])}</span></div>`).join('');
+$('#n7').textContent=x?n7+' تطبيقات أندرويد':n7+' Android apps';$('#names').textContent=A.map(a=>a.n).join(' · ');
+$('#sk').innerHTML=Object.keys(S).map(k=>`<div class="box"><b>${tr(k)}</b><div class="chips">${S[k].split(',').map(c=>`<span class="chip">${tr(c)}</span>`).join('')}</div></div>`).join('');
+$('#list').innerHTML=A.map((a,i)=>{const n=a.s.length,d=x?AA[i]:a,
+strip=n?a.s.map(s=>`<figure><div class="ph"><img loading="lazy" src="assets/${a.id}/t/${s}.webp" data-f="assets/${a.id}/${s}.webp" alt="${a.n}: ${cap(s)}"></div><figcaption>${((CAP[a.id]||{})[s]||cap(s)).split('|')[x?1:0]||cap(s)}</figcaption></figure>`).join(''):`<figure><div class="ph soon">${tr('Screens coming soon')}</div></figure>`.repeat(4);
+return `<article class="app" id="${a.id}" style="--a:${a.c}"><header><div><h3>${a.n}</h3><div class="role">${d.r}</div></div><span class="pill">${n?(x?n+' شاشة':n+' screens'):tr('Coming soon')}</span>${n?'<button class="ib" data-dir="-1" aria-label="Scroll left">‹</button><button class="ib" data-dir="1" aria-label="Scroll right">›</button>':''}</header><p class="lead">${d.d}</p><ul>${d.p.map(p=>`<li>${p}</li>`).join('')}</ul><div class="chips">${a.t.map(t=>`<span class="chip">${t}</span>`).join('')}</div><div class="strip">${strip}</div></article>`}).join('');
+$('#tl').innerHTML=J.map((j,n)=>{const q=x?1:0,g=s=>s.split('|')[q],m=A.find(a=>a.id===j.a[0]);
+return `<article class="step" style="--a:${m.c}"><i>${n+1}</i><div><div class="chips">${j.a.map(id=>{const p=A.find(a=>a.id===id);return `<a class="chip app-chip" href="#${id}" style="--a:${p.c}">${p.n}</a>`}).join('')}<span class="who">${g(j.w)}</span></div><h3>${g(j.t)}</h3><p>${g(j.d)}</p></div><div class="th">${j.i.map(k=>{const[a,s]=k.split('/');return s==='soon'?`<div class="ph soon">${tr('Coming soon')}</div>`:`<a href="#${a}"><div class="ph"><img loading="lazy" src="assets/${a}/t/${s}.webp" alt=""></div></a>`}).join('')}</div></article>`}).join('');
+$('#links').innerHTML=[['Email','mailto:'+C.email],['LinkedIn',C.linkedin],['GitHub',C.github]].filter(l=>l[1]).map((l,i)=>`<a class="btn${i?'':' p'}" href="${l[1]}">${tr(l[0])}</a>`).join('');
+const w=document.createTreeWalker(document.body,4);for(let n;n=w.nextNode();){if(n.parentNode.tagName==='SCRIPT')continue;const o=(n._o??=n.nodeValue),t=o.trim(),v=t&&x&&look(t);n.nodeValue=v?o.replace(t,v):o}
+document.querySelectorAll('section .eye,section h2,section .sub,.box,.app,.step').forEach(e=>{if(e.classList.contains('rv'))return;e.classList.add('rv');e.style.setProperty('--d',[...e.parentNode.children].indexOf(e)%4*90+'ms');io.observe(e)})}
+R();
+document.querySelectorAll('.hero>div:first-child>*').forEach((e,i)=>e.style.animationDelay=i*90+'ms');
+{const m=['Kotlin','Jetpack Compose','Ktor','Vtiger CRM','AWS Lightsail','Dagger Hilt','Retrofit','Coroutines','Firebase','Clean Architecture','MVVM','Zoho CRM'].map(t=>`<span>${t}</span>`).join('');$('#mq').innerHTML=`<div>${m+m}</div>`}
+$('#lg').onclick=()=>{lang=ar()?'en':'ar';try{localStorage.l=lang}catch(e){}R();document.body.animate([{opacity:.15},{opacity:1}],{duration:450,easing:'ease-out'})};
+addEventListener('scroll',()=>{$('#pb').style.transform='scaleX('+scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight)+')'},{passive:true});
+$('#yr').textContent=new Date().getFullYear();
+$('#th').onclick=()=>{const r=document.documentElement,d=r.dataset.theme==='dark'?'light':'dark';r.dataset.theme=d;try{localStorage.t=d}catch(e){}};
+let L=[],k=0;const lb=$('#lb'),li=lb.querySelector('img');
+const show=i=>{k=(i+L.length)%L.length;li.src=L[k].dataset.f;li.alt=L[k].alt};
+document.addEventListener('click',e=>{const t=e.target,d=t.closest('[data-dir]');
+if(d){t.closest('.app').querySelector('.strip').scrollBy({left:d.dataset.dir*420,behavior:'smooth'});return}
+const im=t.closest('.strip img');if(im){L=[...im.closest('.strip').querySelectorAll('img')];show(L.indexOf(im));lb.hidden=false;return}
+const n=t.closest('[data-lb]');if(n){show(k+ +n.dataset.lb);return}
+if(t===lb||t.id==='x')lb.hidden=true});
+addEventListener('keydown',e=>{if(lb.hidden)return;if(e.key==='Escape')lb.hidden=true;if(e.key==='ArrowRight')show(k+1);if(e.key==='ArrowLeft')show(k-1)});
+</script></body></html>
